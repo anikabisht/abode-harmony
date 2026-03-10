@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   LayoutDashboard, QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed,
-  Users, ClipboardList, UserCheck, TrendingUp, FileText
+  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
 import DashboardLayout from "./components/DashboardLayout";
@@ -28,6 +28,7 @@ import WardenFood from "./pages/warden/WardenFood";
 import WardenOutpass from "./pages/warden/WardenOutpass";
 import WardenRoommates from "./pages/warden/WardenRoommates";
 import WardenReports from "./pages/warden/WardenReports";
+import WardenContacts from "./pages/warden/WardenContacts";
 
 const studentNav = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/student" },
@@ -45,6 +46,7 @@ const wardenNav = [
   { icon: TrendingUp, label: "Food Analytics", path: "/warden/food" },
   { icon: MapPin, label: "Outpass Monitor", path: "/warden/outpass" },
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
+  { icon: Phone, label: "Contacts", path: "/warden/contacts" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
@@ -87,6 +89,7 @@ const AppRoutes = () => {
         <Route path="/warden/food" element={<WardenFood />} />
         <Route path="/warden/outpass" element={<WardenOutpass />} />
         <Route path="/warden/roommates" element={<WardenRoommates />} />
+        <Route path="/warden/contacts" element={<WardenContacts />} />
         <Route path="/warden/reports" element={<WardenReports />} />
         <Route path="*" element={<Navigate to="/warden" replace />} />
       </Routes>

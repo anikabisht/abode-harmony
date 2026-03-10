@@ -102,6 +102,10 @@ const StudentOutpass = () => {
               <CheckCircle2 size={14} />
               <span>Parent verification will be checked automatically</span>
             </div>
+            <div className="flex items-center gap-2 rounded-lg bg-primary/5 border border-primary/20 p-3 text-xs text-foreground">
+              <MapPin size={14} className="text-primary" />
+              <span>Your live location will be shared with the warden during the outpass</span>
+            </div>
             <button onClick={startDemo} className="gradient-primary text-primary-foreground rounded-lg px-4 py-2.5 text-sm font-medium w-full">
               Submit Request
             </button>
