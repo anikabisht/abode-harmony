@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { QrCode, CheckCircle2, XCircle, Clock } from "lucide-react";
+import { CheckCircle2, XCircle, ClipboardList } from "lucide-react";
 
 const attendanceHistory = [
   { date: "Feb 18", breakfast: true, lunch: true, dinner: false },
@@ -16,23 +16,22 @@ const StudentAttendance = () => {
     <div className="space-y-8">
       <div>
         <h1 className="text-2xl font-bold font-heading text-foreground">My Attendance</h1>
-        <p className="text-muted-foreground mt-1">Scan QR at mess entry to mark attendance</p>
+        <p className="text-muted-foreground mt-1">Attendance is marked by your warden</p>
       </div>
 
-      {/* QR Scan Button */}
+      {/* Info Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="glass-card rounded-2xl p-8 text-center"
+        className="glass-card rounded-2xl p-6 flex items-center gap-4"
       >
-        <div className="flex h-24 w-24 items-center justify-center rounded-2xl gradient-primary text-primary-foreground mx-auto mb-4 shadow-lg">
-          <QrCode size={48} />
+        <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary flex-shrink-0">
+          <ClipboardList size={24} />
         </div>
-        <h2 className="text-lg font-bold font-heading text-foreground mb-1">Scan to Check In</h2>
-        <p className="text-sm text-muted-foreground mb-4">Show your QR code at the mess entry scanner</p>
-        <button className="gradient-primary text-primary-foreground rounded-lg px-6 py-2.5 text-sm font-medium shadow-md hover:opacity-90 transition-opacity">
-          Show My QR Code
-        </button>
+        <div>
+          <h2 className="text-sm font-semibold font-heading text-foreground">Warden-Marked Attendance</h2>
+          <p className="text-xs text-muted-foreground mt-0.5">Your attendance is recorded by the warden during roll call</p>
+        </div>
       </motion.div>
 
       {/* Attendance Stats */}
