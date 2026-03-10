@@ -1,20 +1,15 @@
 import { motion } from "framer-motion";
-import { MapPin, Clock, CheckCircle2, XCircle, AlertTriangle } from "lucide-react";
+import { MapPin, Clock, CheckCircle2, AlertTriangle, Navigation } from "lucide-react";
 import StatCard from "@/components/StatCard";
 
 const outpasses = [
-  { student: "Priya Patel", room: "205", destination: "Home - Mumbai", returnBy: "6:00 PM", status: "active", timeStatus: "on_time" },
-  { student: "Vikram Joshi", room: "104", destination: "Friend's house", returnBy: "4:00 PM", status: "active", timeStatus: "overdue" },
-  { student: "Karan Mehta", room: "210", destination: "Market", returnBy: "5:30 PM", status: "active", timeStatus: "overdue" },
-  { student: "Sneha Gupta", room: "108", destination: "Medical", returnBy: "3:00 PM", status: "returned", timeStatus: "on_time" },
-  { student: "Arjun Singh", room: "302", destination: "Home - Delhi", returnBy: "8:00 PM", status: "active", timeStatus: "on_time" },
-  { student: "Ananya Rao", room: "315", destination: "Library", returnBy: "7:00 PM", status: "returned", timeStatus: "on_time" },
+  { student: "Priya Patel", room: "205", destination: "Home - Mumbai", returnBy: "6:00 PM", status: "active", timeStatus: "on_time", location: { lat: 19.076, lng: 72.8777, label: "Andheri West, Mumbai" } },
+  { student: "Vikram Joshi", room: "104", destination: "Friend's house", returnBy: "4:00 PM", status: "active", timeStatus: "overdue", location: { lat: 28.6139, lng: 77.209, label: "Connaught Place, Delhi" } },
+  { student: "Karan Mehta", room: "210", destination: "Market", returnBy: "5:30 PM", status: "active", timeStatus: "overdue", location: { lat: 28.5355, lng: 77.391, label: "Sector 18, Noida" } },
+  { student: "Sneha Gupta", room: "108", destination: "Medical", returnBy: "3:00 PM", status: "returned", timeStatus: "on_time", location: null },
+  { student: "Arjun Singh", room: "302", destination: "Home - Delhi", returnBy: "8:00 PM", status: "active", timeStatus: "on_time", location: { lat: 28.7041, lng: 77.1025, label: "Rohini, Delhi" } },
+  { student: "Ananya Rao", room: "315", destination: "Library", returnBy: "7:00 PM", status: "returned", timeStatus: "on_time", location: null },
 ];
-
-const timeColors: Record<string, string> = {
-  on_time: "text-success",
-  overdue: "text-destructive",
-};
 
 const rowBg: Record<string, string> = {
   on_time: "",
@@ -55,7 +50,14 @@ const WardenOutpass = () => (
                 <p className="text-xs text-muted-foreground">Room {op.room} • {op.destination}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 text-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-xs">
+              {/* Live location */}
+              {op.location && op.status === "active" && (
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-accent px-2.5 py-1 text-accent-foreground font-medium">
+                  <Navigation size={11} className="text-primary animate-pulse" />
+                  {op.location.label}
+                </span>
+              )}
               <span className="flex items-center gap-1 text-muted-foreground">
                 <Clock size={12} /> Return by {op.returnBy}
               </span>

@@ -89,6 +89,7 @@ const AppRoutes = () => {
         <Route path="/warden/food" element={<WardenFood />} />
         <Route path="/warden/outpass" element={<WardenOutpass />} />
         <Route path="/warden/roommates" element={<WardenRoommates />} />
+        <Route path="/warden/contacts" element={<WardenContacts />} />
         <Route path="/warden/reports" element={<WardenReports />} />
         <Route path="*" element={<Navigate to="/warden" replace />} />
       </Routes>

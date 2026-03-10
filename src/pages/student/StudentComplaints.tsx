@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wrench, Zap, Shirt, Hammer, Plus, AlertTriangle } from "lucide-react";
+import { Wrench, Zap, Shirt, Hammer, Plus, AlertTriangle, Sparkles, UtensilsCrossed, MoreHorizontal } from "lucide-react";
 import { useState } from "react";
 
 const categories = [
