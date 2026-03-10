@@ -46,6 +46,7 @@ const wardenNav = [
   { icon: TrendingUp, label: "Food Analytics", path: "/warden/food" },
   { icon: MapPin, label: "Outpass Monitor", path: "/warden/outpass" },
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
+  { icon: Phone, label: "Contacts", path: "/warden/contacts" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
