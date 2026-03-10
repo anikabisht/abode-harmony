@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell } from "lucide-react";
+import { ClipboardList, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell } from "lucide-react";
 import StatCard from "@/components/StatCard";
 import { useRole } from "@/contexts/RoleContext";
 
