@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
 import DashboardLayout from "./components/DashboardLayout";
-import RoleSelect from "./pages/RoleSelect";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 // Student pages
