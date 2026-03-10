@@ -56,7 +56,7 @@ const AppRoutes = () => {
   if (!role) {
     return (
       <Routes>
-        <Route path="/" element={<RoleSelect />} />
+        <Route path="/" element={<Login />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     );
