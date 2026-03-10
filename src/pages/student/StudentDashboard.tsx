@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell } from "lucide-react";
+import { ClipboardList, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell } from "lucide-react";
 import StatCard from "@/components/StatCard";
 import { useRole } from "@/contexts/RoleContext";
 
@@ -15,7 +15,7 @@ const StudentDashboard = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <StatCard icon={QrCode} title="Attendance" value="94%" subtitle="This month" gradient="success" delay={0} />
+        <StatCard icon={ClipboardList} title="Attendance" value="94%" subtitle="This month" gradient="success" delay={0} />
         <StatCard icon={MessageSquareWarning} title="Open Complaints" value="2" subtitle="1 in progress" gradient="warning" delay={0.05} />
         <StatCard icon={MapPin} title="Outings" value="3" subtitle="This month" gradient="primary" delay={0.1} />
         <StatCard icon={Heart} title="Roommate Match" value="92%" subtitle="Arjun Reddy" gradient="success" delay={0.15} />
