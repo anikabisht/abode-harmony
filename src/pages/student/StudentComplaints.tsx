@@ -7,6 +7,9 @@ const categories = [
   { id: "electrician", label: "Electrical", icon: Zap },
   { id: "carpenter", label: "Carpentry", icon: Hammer },
   { id: "laundry", label: "Laundry", icon: Shirt },
+  { id: "cleaning", label: "Cleaning", icon: Sparkles },
+  { id: "food", label: "Food", icon: UtensilsCrossed },
+  { id: "others", label: "Others", icon: MoreHorizontal },
 ];
 
 const myTickets = [
