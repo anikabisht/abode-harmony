@@ -28,6 +28,7 @@ import WardenFood from "./pages/warden/WardenFood";
 import WardenOutpass from "./pages/warden/WardenOutpass";
 import WardenRoommates from "./pages/warden/WardenRoommates";
 import WardenReports from "./pages/warden/WardenReports";
+import WardenContacts from "./pages/warden/WardenContacts";
 
 const studentNav = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/student" },
