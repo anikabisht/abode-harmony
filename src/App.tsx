@@ -19,6 +19,7 @@ import StudentComplaints from "./pages/student/StudentComplaints";
 import StudentOutpass from "./pages/student/StudentOutpass";
 import StudentAttendance from "./pages/student/StudentAttendance";
 import StudentMessMenu from "./pages/student/StudentMessMenu";
+import StudentWifi from "./pages/student/StudentWifi";
 
 // Warden pages
 import WardenDashboard from "./pages/warden/WardenDashboard";
