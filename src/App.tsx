@@ -8,6 +8,7 @@ import {
   Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
+import { NotificationProvider } from "./contexts/NotificationContext";
 import DashboardLayout from "./components/DashboardLayout";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
