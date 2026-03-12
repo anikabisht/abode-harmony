@@ -12,6 +12,8 @@ const recentActivity = [
 ];
 
 const WardenDashboard = () => {
+  const { notifications } = useNotifications();
+  const recentNotifs = notifications.slice(0, 4);
   return (
     <div className="space-y-8">
       <div>
