@@ -99,6 +99,7 @@ const AppRoutes = () => {
         <Route path="/warden/roommates" element={<WardenRoommates />} />
         <Route path="/warden/contacts" element={<WardenContacts />} />
         <Route path="/warden/wifi" element={<WardenWifi />} />
+        <Route path="/warden/notifications" element={<WardenNotifications />} />
         <Route path="/warden/reports" element={<WardenReports />} />
         <Route path="*" element={<Navigate to="/warden" replace />} />
       </Routes>
