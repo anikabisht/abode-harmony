@@ -53,6 +53,7 @@ const wardenNav = [
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
   { icon: Phone, label: "Contacts", path: "/warden/contacts" },
   { icon: Wifi, label: "WiFi Heatmap", path: "/warden/wifi" },
+  { icon: Bell, label: "Notifications", path: "/warden/notifications" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
