@@ -9,6 +9,7 @@ const categoryInfo: Record<string, { label: string; icon: any }> = {
   laundry: { label: "Laundry", icon: Shirt },
   cleaning: { label: "Cleaning", icon: Sparkles },
   food: { label: "Food", icon: UtensilsCrossed },
+  wifi: { label: "WiFi", icon: Wifi },
   others: { label: "Others", icon: MoreHorizontal },
 };
 

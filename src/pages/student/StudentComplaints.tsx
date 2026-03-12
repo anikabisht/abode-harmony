@@ -9,6 +9,7 @@ const categories = [
   { id: "laundry", label: "Laundry", icon: Shirt },
   { id: "cleaning", label: "Cleaning", icon: Sparkles },
   { id: "food", label: "Food", icon: UtensilsCrossed },
+  { id: "wifi", label: "WiFi", icon: Wifi },
   { id: "others", label: "Others", icon: MoreHorizontal },
 ];
 
