@@ -39,6 +39,7 @@ const studentNav = [
   { icon: MessageSquareWarning, label: "Complaints", path: "/student/complaints" },
   { icon: MapPin, label: "Outpass", path: "/student/outpass" },
   { icon: UtensilsCrossed, label: "Mess Menu", path: "/student/mess" },
+  { icon: Wifi, label: "WiFi Help Desk", path: "/student/wifi" },
 ];
 
 const wardenNav = [
