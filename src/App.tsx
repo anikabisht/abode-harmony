@@ -32,6 +32,7 @@ import WardenRoommates from "./pages/warden/WardenRoommates";
 import WardenReports from "./pages/warden/WardenReports";
 import WardenContacts from "./pages/warden/WardenContacts";
 import WardenWifi from "./pages/warden/WardenWifi";
+import WardenNotifications from "./pages/warden/WardenNotifications";
 
 const studentNav = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/student" },
