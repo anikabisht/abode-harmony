@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wrench, Zap, Shirt, Hammer, AlertTriangle, UserCheck, Sparkles, UtensilsCrossed, MoreHorizontal } from "lucide-react";
+import { Wrench, Zap, Shirt, Hammer, AlertTriangle, UserCheck, Sparkles, UtensilsCrossed, MoreHorizontal, Wifi } from "lucide-react";
 import { useState } from "react";
 
 const categoryInfo: Record<string, { label: string; icon: any }> = {
