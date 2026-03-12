@@ -6,7 +6,9 @@ import { useNotifications } from "@/contexts/NotificationContext";
 
 const StudentDashboard = () => {
   const { studentName } = useRole();
+  const { notifications, markRead } = useNotifications();
   const firstName = studentName.split(" ")[0];
+  const myNotifications = notifications.filter(n => n.target === "all" || n.target === studentName).slice(0, 5);
 
   return (
     <div className="space-y-8">
