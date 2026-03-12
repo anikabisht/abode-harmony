@@ -58,6 +58,27 @@ const WardenDashboard = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Recent Notifications */}
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card rounded-xl p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Bell size={18} className="text-primary" />
+          <h2 className="text-lg font-semibold font-heading text-foreground">Recent Notifications Sent</h2>
+        </div>
+        <div className="space-y-3">
+          {recentNotifs.map((n) => (
+            <div key={n.id} className="flex items-start justify-between py-2 border-b border-border/50 last:border-0">
+              <div>
+                <p className="text-sm font-medium text-foreground">{n.title}</p>
+                <p className="text-xs text-muted-foreground mt-0.5">{n.message}</p>
+              </div>
+              <span className={`text-xs px-2 py-0.5 rounded-full flex-shrink-0 ml-4 ${n.target === "all" ? "bg-primary/20 text-primary" : "bg-accent text-accent-foreground"}`}>
+                {n.target === "all" ? "Everyone" : n.target}
+              </span>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </div>
   );
 };
