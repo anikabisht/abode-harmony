@@ -78,6 +78,7 @@ const AppRoutes = () => {
           <Route path="/student/complaints" element={<StudentComplaints />} />
           <Route path="/student/outpass" element={<StudentOutpass />} />
           <Route path="/student/mess" element={<StudentMessMenu />} />
+          <Route path="/student/wifi" element={<StudentWifi />} />
           <Route path="*" element={<Navigate to="/student" replace />} />
         </Routes>
       </DashboardLayout>
