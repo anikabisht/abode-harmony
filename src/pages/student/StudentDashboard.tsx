@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
-import { ClipboardList, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell } from "lucide-react";
+import { ClipboardList, MessageSquareWarning, MapPin, Heart, UtensilsCrossed, BarChart3, Bell, Image } from "lucide-react";
 import StatCard from "@/components/StatCard";
 import { useRole } from "@/contexts/RoleContext";
+import { useNotifications } from "@/contexts/NotificationContext";
 
 const StudentDashboard = () => {
   const { studentName } = useRole();
+  const { notifications, markRead } = useNotifications();
   const firstName = studentName.split(" ")[0];
+  const myNotifications = notifications.filter(n => n.target === "all" || n.target === studentName).slice(0, 5);
 
   return (
     <div className="space-y-8">
@@ -63,18 +66,23 @@ const StudentDashboard = () => {
             <h2 className="text-lg font-semibold font-heading text-foreground">Notifications</h2>
           </div>
           <div className="space-y-3">
-            {[
-              { text: "🎉 Happy Republic Day! Hostel closed tomorrow.", time: "2 hrs ago", unread: true },
-              { text: "📝 Mid-sem exams start Feb 24. Mess timings extended.", time: "5 hrs ago", unread: true },
-              { text: "👕 Your laundry is ready for pickup.", time: "1 day ago", unread: false },
-              { text: "🔧 Plumbing complaint resolved — Room 204.", time: "2 days ago", unread: false },
-            ].map((n, i) => (
-              <div key={i} className={`flex items-start gap-3 py-2 ${n.unread ? "" : "opacity-60"}`}>
-                {n.unread && <span className="mt-1.5 h-2 w-2 rounded-full bg-primary flex-shrink-0" />}
-                {!n.unread && <span className="mt-1.5 h-2 w-2 rounded-full bg-muted-foreground/30 flex-shrink-0" />}
-                <div>
-                  <p className="text-sm text-foreground">{n.text}</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">{n.time}</p>
+            {myNotifications.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No notifications</p>
+            ) : myNotifications.map((n) => (
+              <div key={n.id} onClick={() => markRead(n.id)} className={`flex items-start gap-3 py-2 cursor-pointer ${n.read ? "opacity-60" : ""}`}>
+                <span className={`mt-1.5 h-2 w-2 rounded-full flex-shrink-0 ${n.read ? "bg-muted-foreground/30" : "bg-primary"}`} />
+                <div className="flex-1">
+                  <p className="text-sm font-medium text-foreground">{n.title}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{n.message}</p>
+                  {n.type === "poll" && n.pollOptions && (
+                    <div className="mt-1.5 flex gap-2">
+                      {n.pollOptions.map((o, j) => (
+                        <button key={j} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary hover:bg-primary/20 transition-colors">{o.text}</button>
+                      ))}
+                    </div>
+                  )}
+                  {n.type === "image" && n.imageUrl && <img src={n.imageUrl} alt="" className="mt-1.5 rounded-lg max-h-24 object-cover" />}
+                  <p className="text-xs text-muted-foreground mt-1">{new Date(n.createdAt).toLocaleString()}</p>
                 </div>
               </div>
             ))}

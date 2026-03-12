@@ -5,9 +5,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   LayoutDashboard, QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed,
-  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi
+  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi, Bell
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
+import { NotificationProvider } from "./contexts/NotificationContext";
 import DashboardLayout from "./components/DashboardLayout";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
@@ -31,6 +32,7 @@ import WardenRoommates from "./pages/warden/WardenRoommates";
 import WardenReports from "./pages/warden/WardenReports";
 import WardenContacts from "./pages/warden/WardenContacts";
 import WardenWifi from "./pages/warden/WardenWifi";
+import WardenNotifications from "./pages/warden/WardenNotifications";
 
 const studentNav = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/student" },
@@ -51,6 +53,7 @@ const wardenNav = [
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
   { icon: Phone, label: "Contacts", path: "/warden/contacts" },
   { icon: Wifi, label: "WiFi Heatmap", path: "/warden/wifi" },
+  { icon: Bell, label: "Notifications", path: "/warden/notifications" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
@@ -96,6 +99,7 @@ const AppRoutes = () => {
         <Route path="/warden/roommates" element={<WardenRoommates />} />
         <Route path="/warden/contacts" element={<WardenContacts />} />
         <Route path="/warden/wifi" element={<WardenWifi />} />
+        <Route path="/warden/notifications" element={<WardenNotifications />} />
         <Route path="/warden/reports" element={<WardenReports />} />
         <Route path="*" element={<Navigate to="/warden" replace />} />
       </Routes>
@@ -109,9 +113,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <RoleProvider>
-        <BrowserRouter>
-          <AppRoutes />
-        </BrowserRouter>
+        <NotificationProvider>
+          <BrowserRouter>
+            <AppRoutes />
+          </BrowserRouter>
+        </NotificationProvider>
       </RoleProvider>
     </TooltipProvider>
   </QueryClientProvider>
