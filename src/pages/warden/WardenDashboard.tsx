@@ -1,6 +1,7 @@
-import { Users, QrCode, MessageSquareWarning, UtensilsCrossed, MapPin, Heart, TrendingUp, AlertTriangle, Clock } from "lucide-react";
+import { Users, QrCode, MessageSquareWarning, UtensilsCrossed, MapPin, Heart, TrendingUp, AlertTriangle, Clock, Bell } from "lucide-react";
 import StatCard from "@/components/StatCard";
 import { motion } from "framer-motion";
+import { useNotifications } from "@/contexts/NotificationContext";
 
 const recentActivity = [
   { text: "Rahul Sharma checked in at 10:42 PM", time: "2 min ago", color: "bg-success" },
