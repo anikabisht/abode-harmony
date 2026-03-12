@@ -50,6 +50,7 @@ const wardenNav = [
   { icon: MapPin, label: "Outpass Monitor", path: "/warden/outpass" },
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
   { icon: Phone, label: "Contacts", path: "/warden/contacts" },
+  { icon: Wifi, label: "WiFi Heatmap", path: "/warden/wifi" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
