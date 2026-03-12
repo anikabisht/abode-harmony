@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   LayoutDashboard, QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed,
-  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi
+  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi, Bell
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
 import { NotificationProvider } from "./contexts/NotificationContext";
