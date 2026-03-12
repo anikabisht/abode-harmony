@@ -5,7 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {
   LayoutDashboard, QrCode, MessageSquareWarning, MapPin, Heart, UtensilsCrossed,
-  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone
+  Users, ClipboardList, UserCheck, TrendingUp, FileText, Phone, Wifi
 } from "lucide-react";
 import { RoleProvider, useRole } from "./contexts/RoleContext";
 import DashboardLayout from "./components/DashboardLayout";
@@ -19,6 +19,7 @@ import StudentComplaints from "./pages/student/StudentComplaints";
 import StudentOutpass from "./pages/student/StudentOutpass";
 import StudentAttendance from "./pages/student/StudentAttendance";
 import StudentMessMenu from "./pages/student/StudentMessMenu";
+import StudentWifi from "./pages/student/StudentWifi";
 
 // Warden pages
 import WardenDashboard from "./pages/warden/WardenDashboard";
@@ -29,6 +30,7 @@ import WardenOutpass from "./pages/warden/WardenOutpass";
 import WardenRoommates from "./pages/warden/WardenRoommates";
 import WardenReports from "./pages/warden/WardenReports";
 import WardenContacts from "./pages/warden/WardenContacts";
+import WardenWifi from "./pages/warden/WardenWifi";
 
 const studentNav = [
   { icon: LayoutDashboard, label: "Dashboard", path: "/student" },
@@ -37,6 +39,7 @@ const studentNav = [
   { icon: MessageSquareWarning, label: "Complaints", path: "/student/complaints" },
   { icon: MapPin, label: "Outpass", path: "/student/outpass" },
   { icon: UtensilsCrossed, label: "Mess Menu", path: "/student/mess" },
+  { icon: Wifi, label: "WiFi Help Desk", path: "/student/wifi" },
 ];
 
 const wardenNav = [
@@ -47,6 +50,7 @@ const wardenNav = [
   { icon: MapPin, label: "Outpass Monitor", path: "/warden/outpass" },
   { icon: Heart, label: "Roommate Success", path: "/warden/roommates" },
   { icon: Phone, label: "Contacts", path: "/warden/contacts" },
+  { icon: Wifi, label: "WiFi Heatmap", path: "/warden/wifi" },
   { icon: FileText, label: "Reports", path: "/warden/reports" },
 ];
 
@@ -74,6 +78,7 @@ const AppRoutes = () => {
           <Route path="/student/complaints" element={<StudentComplaints />} />
           <Route path="/student/outpass" element={<StudentOutpass />} />
           <Route path="/student/mess" element={<StudentMessMenu />} />
+          <Route path="/student/wifi" element={<StudentWifi />} />
           <Route path="*" element={<Navigate to="/student" replace />} />
         </Routes>
       </DashboardLayout>
@@ -90,6 +95,7 @@ const AppRoutes = () => {
         <Route path="/warden/outpass" element={<WardenOutpass />} />
         <Route path="/warden/roommates" element={<WardenRoommates />} />
         <Route path="/warden/contacts" element={<WardenContacts />} />
+        <Route path="/warden/wifi" element={<WardenWifi />} />
         <Route path="/warden/reports" element={<WardenReports />} />
         <Route path="*" element={<Navigate to="/warden" replace />} />
       </Routes>

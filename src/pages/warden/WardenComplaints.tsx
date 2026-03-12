@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wrench, Zap, Shirt, Hammer, AlertTriangle, UserCheck, Sparkles, UtensilsCrossed, MoreHorizontal } from "lucide-react";
+import { Wrench, Zap, Shirt, Hammer, AlertTriangle, UserCheck, Sparkles, UtensilsCrossed, MoreHorizontal, Wifi } from "lucide-react";
 import { useState } from "react";
 
 const categoryInfo: Record<string, { label: string; icon: any }> = {
@@ -9,6 +9,7 @@ const categoryInfo: Record<string, { label: string; icon: any }> = {
   laundry: { label: "Laundry", icon: Shirt },
   cleaning: { label: "Cleaning", icon: Sparkles },
   food: { label: "Food", icon: UtensilsCrossed },
+  wifi: { label: "WiFi", icon: Wifi },
   others: { label: "Others", icon: MoreHorizontal },
 };
 

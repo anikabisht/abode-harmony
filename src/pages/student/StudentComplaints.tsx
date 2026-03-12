@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Wrench, Zap, Shirt, Hammer, Plus, AlertTriangle, Sparkles, UtensilsCrossed, MoreHorizontal } from "lucide-react";
+import { Wrench, Zap, Shirt, Hammer, Plus, AlertTriangle, Sparkles, UtensilsCrossed, MoreHorizontal, Wifi } from "lucide-react";
 import { useState } from "react";
 
 const categories = [
@@ -9,6 +9,7 @@ const categories = [
   { id: "laundry", label: "Laundry", icon: Shirt },
   { id: "cleaning", label: "Cleaning", icon: Sparkles },
   { id: "food", label: "Food", icon: UtensilsCrossed },
+  { id: "wifi", label: "WiFi", icon: Wifi },
   { id: "others", label: "Others", icon: MoreHorizontal },
 ];
 
